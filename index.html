@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love 💖</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tombol Mute/Unmute Musik -->
+    <button class="music-btn" id="musicToggle" onclick="toggleAudio()">🎵</button>
+
+    <!-- File BGM -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="bmg.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="phone-container">
+
+        <!-- SCREEN 1: WELCOME -->
+        <div class="screen active" id="screen1">
+            <h1 class="title-cursive">Happy Birthday<br>My Love 💖</h1>
+            <div class="envelope-icon" onclick="openFirstTime()">✉️</div>
+            <p style="font-size: 0.9rem; color: #888;">Ketuk amplop atau tombol bawah</p>
+            <button class="btn-open" onclick="openFirstTime()">Open ✨</button>
+        </div>
+
+        <!-- SCREEN 2: DASHBOARD -->
+        <div class="screen" id="screen2">
+            <div class="calendar-card">
+                <div class="calendar-month">October</div>
+                <div class="calendar-grid">
+                    <div class="day-header">S</div><div class="day-header">M</div><div class="day-header">T</div><div class="day-header">W</div><div class="day-header">T</div><div class="day-header">F</div><div class="day-header">S</div>
+                    <div class="day"></div><div class="day"></div><div class="day"></div><div class="day"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div>
+                    <div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div>
+                    <div class="day">11</div><div class="day marked">12</div><div class="day">13</div><div class="day">14</div><div class="day">15</div><div class="day">16</div><div class="day">17</div>
+                    <div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div>
+                    <div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day">30</div><div class="day">31</div>
+                </div>
+            </div>
+
+            <p class="subtitle">Hai cantik, pilih mau buka yang mana dulu nii? 🌸</p>
+
+            <div class="grid-menu">
+                <div class="menu-card" onclick="goToScreen('screen-wish')">
+                    <div class="menu-icon">🎂</div>
+                    <div class="menu-title">Birthday Wish</div>
+                </div>
+                <div class="menu-card" onclick="goToScreen('screen-letter')">
+                    <div class="menu-icon">💌</div>
+                    <div class="menu-title">Letter For You</div>
+                </div>
+                <div class="menu-card" onclick="goToScreen('screen-memories')">
+                    <div class="menu-icon">📷</div>
+                    <div class="menu-title">Pinky Memories</div>
+                </div>
+                <div class="menu-card" onclick="goToScreen('screen-gift')">
+                    <div class="menu-icon">🎁</div>
+                    <div class="menu-title">Special Gift</div>
+                </div>
+                <div class="menu-card" onclick="goToScreen('screen-songs')">
+                    <div class="menu-icon">📷</div>
+                    <div class="menu-title">Colorful Memories</div>
+                </div>
+                <div class="menu-card" onclick="goToScreen('screen-reasons')">
+                    <div class="menu-icon">💖</div>
+                    <div class="menu-title">Reasons I Love You</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN: WISH -->
+        <div class="screen" id="screen-wish">
+            <div class="content-card">
+                <h3>Birthday Wish 🎂</h3>
+                <p><b>Happy Birthday, My Love! 💕</b></p><br>
+                <p>Today is a very special day, because the most precious person in my life is celebrating her birthday. Today is so special because you were born bring joy into my world.</p><br>
+                <p>Semoga di umur yang baru ini, kamu selalu diberikan kesehatan, kelancaran, kebahagiaan, ketenangan dan semoga segala keinginan segera terkabul. Doa terbaikku selalu menyertaimu sayang</p>
+            </div>
+            <button class="btn-back" onclick="goToScreen('screen2')">Back</button>
+        </div>
+
+        <!-- SCREEN: LETTER -->
+        <div class="screen" id="screen-letter">
+            <div class="content-card">
+                <h3>Letter for You 💌</h3>
+                <p><b>Hi Sweetheart,</b></p><br>
+                <p>Thank you so much for being in my life and choosing to stay by my side through all of our ups, downs, and beautiful journeys. Having you here has completely changed my world for the better, and you are the biggest reason why I smile so happily and look forward to every single day.</p><br>
+                <p>Thank you for being my home, my safest place to return to, and the one who always accepts all of my flaws just as I am. On your special day, I pray that you are always blessed with good health, smooth paths in everything you do, and endless happiness. Happy birthday, my favorite person!  </p>
+            </div>
+            <button class="btn-back" onclick="goToScreen('screen2')">Back</button>
+        </div>
+
+        <!-- SCREEN: MEMORIES (SUDAH DISESUAIKAN DENGAN FOLDER ASSETS) -->
+        <div class="screen" id="screen-memories">
+            <div class="content-card">
+                <h3>Pinky Memories 📸</h3>
+                <div class="photo-grid">
+                    <img src="memory1.png" class="photo-item" alt="Memory 1" onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400'">
+                    <img src="memory2.png" class="photo-item" alt="Memory 2" onerror="this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400'">
+                    <img src="memory3.png" class="photo-item" alt="Memory 3" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400'">
+                    <img src="memory4.png" class="photo-item" alt="Memory 4" onerror="this.src='https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400'">
+                </div>
+            </div>
+            <button class="btn-back" onclick="goToScreen('screen2')">Back</button>
+        </div>
+
+        <!-- SCREEN: GIFT -->
+        <div class="screen" id="screen-gift">
+            <div class="content-card" style="text-align: center;">
+                <h3>Special Gift 🎁</h3>
+
+                    <img src="gift.png" class="gift-photo" alt="Special Gift" onerror="this.src='https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400'">
+
+                    <p><b>Congratulations!</b><br>Kamu berhasil menemukan kotak hadiah ini!</p><br>
+                    <p style="font-size: 0.85rem; color: #666;">Hadiah nya adalah web ini yang dibuat oleh along dan di lambangkan oleh gambar di atas, untuk hadiah lainnya bisa di cek di Rekening yaa cantikk</p>
+            </div>
+            <button class="btn-back" onclick="goToScreen('screen2')">Back</button>
+        </div>
+
+        <!-- SCREEN: SONGS -->
+        <div class="screen" id="screen-songs">
+    <div class="content-card">
+        <h3>Colorful Memories 📸</h3>
+        <p style="text-align: center; font-size: 0.85rem; color: #777; margin-bottom: 12px;">Momen momen berwarna mu di tahun ini ✨</p>
+        
+        <div class="photo-grid-6">
+            <img src="CLRFL/htm.png" class="photo-item" alt="Song 1" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400'    ">
+            <img src="CLRFL/kdd.png" class="photo-item" alt="Song 2" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400'">
+            <img src="CLRFL/pnt.png" class="photo-item" alt="Song 3" onerror="this.src='https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400'">
+            <img src="CLRFL/lgt.png" class="photo-item" alt="Song 4" onerror="this.src='https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400'">
+            <img src="CLRFL/ngh.png" class="photo-item" alt="Song 5" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400'">
+            <img src="CLRFL/sym.png" class="photo-item" alt="Song 6" onerror="this.src='https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400'">
+        </div>
+    </div>
+    <button class="btn-back" onclick="goToScreen('screen2')">Back</button>
+</div>
+
+        <!-- SCREEN: REASONS -->
+        <div class="screen" id="screen-reasons">
+            <div class="content-card">
+                <h3>Reasons I Love You 💖</h3>
+                <ol style="padding-left: 20px; font-size: 0.9rem;">
+                    <li>Kamu adalah alasan dibalik senyumku setiap hari.</li>
+                    <li>Tingkah lucu dan absurd mu yang ga ada abis nya itu.</li>
+                    <li>Kamu selalu support aku dalam kondisi apapun.</li>
+                    <li>Senyum nya manis, pipi nya bulet kaya mochi.</li>
+                    <li>Karena sikap mu yang kalo pas manja, manja banget tapi kalo pas jadi sumala, aku cuma bisa pasrah.</li>
+                    <li>Karena kamu adalah kamu. ❤️</li>
+                </ol>
+            </div>
+            <button class="btn-back" onclick="goToScreen('screen2')">Back</button>
+        </div>
+
+    </div>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+</body>
+</html>
